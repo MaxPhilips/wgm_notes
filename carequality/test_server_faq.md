@@ -28,15 +28,13 @@ Make sure to request JSON format for FHIR resource requests using either:
 * ?_format=json
 * Accept: application/fhir+json
 
-## Create and sign client assertion JWT
+## Get certificate
 
 Out of band, work with Sequoia Project tech support to receive a reference code and an authorization code that can be exchanged for an X.509 certificate and corresponding private key.
 
-Use the certificate and private key to create and sign the client assertion JWT. I wrote a ruby script to sign client assertion JWTs: [generate_client_assertion_jwt.rb](generate_client_assertion_jwt.rb)
+Use the certificate and private key to sign the software statement and client assertion JWTs throughout the rest of the workflow.
 
-## Register your client id with Cerner dynamically
-
-Your client id should be the FQDN that your Carequality certificate and private key were issued for. Contact Max Philips and we will register your client id with Cerner manually. We'll need the client id itself and a description of the client.
+## Use software statement JWT to register a client id with Cerner dynamically
 
 Issue a POST request to the server's /register URL, passing:
 * software statement JWT
@@ -53,7 +51,7 @@ curl --location --request POST 'https://fhir-ehr.stagingcerner.com/beta/0b8a0111
 }'
 ```
 
-## Use client assertion JWT to interact with /token URL
+## Use client assertion JWT to get an access token
 
 Issue a POST request to the server's token URL, passing:
 * scope: system/Patient.read
