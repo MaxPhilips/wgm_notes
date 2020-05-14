@@ -6,11 +6,13 @@ https://fhir-ehr.stagingcerner.com/beta/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/
 Server CapabilityStatement URL:  
 https://fhir-ehr.stagingcerner.com/beta/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/metadata
 
-Note: Cerner's server uses **itself** instead of a separate OAuth server for DCR and token generation. Yes, this is a bit goofy. We've made up a one-off security extension to display /register and /token URLs. This information is available in CapabilityStatement.rest[0].security.extension
+Note: Cerner's server uses **itself** instead of a separate OAuth server for DCR and token generation. Yes, this is a bit goofy. We've exposed a custom request header that can be set on requests to /metadata that causes Carequality OAuth URIs (from Cerner's FHIR server instead of Cerner's Auth server) to override our regular OAuth URIs.
+
+Set the custom request header `Cerner-Override-OAuth-URIs` with a value of `on` to achieve the above. When set, the /metadata response will include:
 
 ```json
 {
-  "url": "https://fhir-ehr.cerner.com/r4/StructureDefinition/carequality-oauth-uris",
+  "url": "http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris",
   "extension": [
     {
       "url": "token",
@@ -24,9 +26,13 @@ Note: Cerner's server uses **itself** instead of a separate OAuth server for DCR
 }
 ```
 
-Make sure to request JSON format for FHIR resource requests using either:
-* ?_format=json
-* Accept: application/fhir+json
+### cURL command
+
+```bash
+curl --location --request GET 'https://fhir-ehr.stagingcerner.com/beta/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/metadata' \
+--header 'Accept: application/fhir+json' \
+--header 'Cerner-Override-OAuth-URIs: on'
+```
 
 ## Get certificate
 
