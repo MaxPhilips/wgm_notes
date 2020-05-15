@@ -49,7 +49,7 @@ Issue a POST request to the server's /register URL, passing:
 
 ```bash
 curl --location --request POST 'https://fhir-ehr.stagingcerner.com/beta/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Authorization/register' \
---header 'Content-Type: application/fhir+json' \
+--header 'Content-Type: application/json' \
 --data-raw '{
   "software_statement": "<generated JWT>",
   "certifications": [],
