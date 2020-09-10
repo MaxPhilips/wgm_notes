@@ -43,7 +43,7 @@ General notes:
 
 Create and use tokens with scopes `patient/Observation.rs` and `patient/Observation.crs` (as mentioned above, this scope can be requested, but not used).
 
-Generate an authorization token with your preferred library or client. One test patient you can use with lots of Observations is 1316024 (add to SMART launch context).
+Generate an authorization token with your preferred library or client. One test patient you can use with lots of Observations is 1316024 (add to SMART launch context). You can use portal/portal to log in.
 
 Expect 200! Yay!
 
@@ -61,7 +61,7 @@ Expect 403. Insufficient scope.
 
 Create and use tokens with scopes `patient/Observation.rs?category=vital-signs` and `patient/Observation.crs?category=vital-signs` (as mentioned above, this scope can be requested, but not used).
 
-Generate an authorization token with your preferred library or client. One test patient you can use with lots of Observations is 1316024 (add to SMART launch context).
+Generate an authorization token with your preferred library or client. One test patient you can use with lots of Observations is 1316024 (add to SMART launch context). You can use portal/portal to log in.
 
 Expect 200! Yay!
 
