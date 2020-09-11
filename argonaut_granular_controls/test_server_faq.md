@@ -4,7 +4,7 @@
 
 ### FHIR server base URL
 
-https://fhir-ehr.stagingcerner.com/beta/ec2458f2-1e24-41c8-b71b-0e701af7583d/
+https://fhir-ehr.stagingcerner.com/beta/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/
 
 #### CapabilityStatement API
 
@@ -16,7 +16,7 @@ base/Observation
 
 ### Authorization server base URL
 
-https://authorization.sandboxcerner.com/tenants/ec2458f2-1e24-41c8-b71b-0e701af7583d/
+https://authorization.sandboxcerner.com/tenants/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/
 
 #### Authorize endpoint
 
@@ -43,7 +43,7 @@ General notes:
 
 Create and use tokens with scopes `patient/Observation.rs` and `patient/Observation.crs` (as mentioned above, this scope can be requested, but not used).
 
-Generate an authorization token with your preferred library or client. Use test patient Nancy SMART 12724066. Her credentials are nancysmart / Cerner01. Other test patients are documented here: https://docs.google.com/document/d/10RnVyF1etl_17pyCyK96tyhUWRbrTyEcqpwzW-Z-Ybs/edit
+Generate an authorization token with your preferred library or client. Use test patient Arthur Morgan 8326009. His credentials are arthur_morgan / Cerner01.
 
 Expect 200! Yay!
 
@@ -61,7 +61,7 @@ Expect 403. Insufficient scope.
 
 Create and use tokens with scopes `patient/Observation.rs?category=vital-signs` and `patient/Observation.crs?category=vital-signs` (as mentioned above, this scope can be requested, but not used).
 
-Generate an authorization token with your preferred library or client. Use test patient Nancy SMART 12724066. Her credentials are nancysmart / Cerner01. Other test patients are documented here: https://docs.google.com/document/d/10RnVyF1etl_17pyCyK96tyhUWRbrTyEcqpwzW-Z-Ybs/edit
+Generate an authorization token with your preferred library or client. Use test patient Arthur Morgan 8326009. His credentials are arthur_morgan / Cerner01.
 
 Expect 200! Yay!
 
