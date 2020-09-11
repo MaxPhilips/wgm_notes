@@ -43,7 +43,7 @@ General notes:
 
 Create and use tokens with scopes `patient/Observation.rs` and `patient/Observation.crs` (as mentioned above, this scope can be requested, but not used).
 
-Generate an authorization token with your preferred library or client. Use test patient Arthur Morgan 8326009. His credentials are arthur_morgan / Cerner01.
+Generate an authorization token with your preferred library or client. Use test patient Tim Peters 1316024. His credentials are tim_peters / Cerner01.
 
 Expect 200! Yay!
 
@@ -61,7 +61,7 @@ Expect 403. Insufficient scope.
 
 Create and use tokens with scopes `patient/Observation.rs?category=vital-signs` and `patient/Observation.crs?category=vital-signs` (as mentioned above, this scope can be requested, but not used).
 
-Generate an authorization token with your preferred library or client. Use test patient Arthur Morgan 8326009. His credentials are arthur_morgan / Cerner01.
+Generate an authorization token with your preferred library or client. Use test patient Tim Peters 1316024. His credentials are tim_peters / Cerner01.
 
 Expect 200! Yay!
 
