@@ -54,7 +54,7 @@ SMARTv2 support is advertised in the well-known SMART configuration.
 
 Create and use tokens with scopes `patient/Observation.rs` and `patient/Observation.crs` (as mentioned above, this scope can be requested, but not used).
 
-Generate an authorization token with your preferred library or client. Use test patient Nancy Smart 12724066. Her credentials are nancysmart / Cerner01.
+Generate an authorization token with your preferred library or client. You can log in with test patient Nancy Smart (patient id 12724066): username nancysmart / password Cerner01.
 
 Expect 200! Yay!
 
@@ -72,7 +72,7 @@ Expect 403. Insufficient scope.
 
 Create and use tokens with scopes `patient/Observation.rs?category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs` and `patient/Observation.crs?category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs` (as mentioned above, this scope can be requested, but not used).
 
-Generate an authorization token with your preferred library or client. Use test patient Nancy Smart 12724066. Her credentials are nancysmart / Cerner01.
+Generate an authorization token with your preferred library or client. You can log in with test patient Nancy Smart (patient id 12724066): username nancysmart / password Cerner01.
 
 Expect 200! Yay!
 
